@@ -14,16 +14,14 @@ const PORT = process.env.PORT || 5000;
 
 connectDB()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`App listening at http://localhost:${PORT}`);
-    });
+    app.listen();
   })
   .catch(err => {
     console.error('Failed to connect to the database:', err);
   });
 
 app.use(cors({
-  origin: ['http://localhost:5173','http://localhost:5173/'],
+  origin: ['http://localhost:5173','http://localhost:5173/','https://main--ideamagixschedular.netlify.app/','https://main--ideamagixschedular.netlify.app'],
 }));
 
 app.use(bodyParser.json({limit: '50mb'}))
